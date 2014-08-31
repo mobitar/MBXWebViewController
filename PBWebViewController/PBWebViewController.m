@@ -80,6 +80,17 @@
 {
     [super viewDidLoad];
     [self setupToolBarItems];
+    [self configureNavigationBar];
+}
+
+- (void)configureNavigationBar
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(closePressed)];
+}
+
+- (void)closePressed
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
